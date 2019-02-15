@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+ 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<title></title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+
+	<body>
+
+		<div class="container" style="margin-top: 40px">
+			<div>
+				<label class="col-md-2 col-xs-2">File Source</label>
+				<div class="col-md-10 col-xs-10 form-group">
+					<input type="file" id="file_source" class="form-control">
+				</div>
+			</div>
+			
+			<div>
+				<label class="col-md-2 col-xs-2">File Traduction</label>
+				<div class="col-md-10 col-xs-10 form-group">
+					<input type="file" id="file_existe" class="form-control">
+				</div>
+			</div>
+		
+			<div style="margin-top: 10px">
+				<label class="col-md-2 col-xs-2"></label>
+				<div class="col-md-10 col-xs-10">
+					<button id="btn_valid" class="btn btn-primary">Start</button>
+					<button id="btn_export" class="btn btn-primary">Export</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container" id="div_results" style="margin-top: 40px">
+			
+		</div>
+		
+		<script id="document-template" type="text/x-handlebars-template">
+			<table class="table table-hover table-striped" id="tab_result">
+				<caption>Traduction</caption>
+				<thead>
+					<tr>
+						<th>Key</th>
+						<th>Language Source</th>
+						<th>Language Traduction</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each this}}
+        			<tr>
+            			<td class="key">{{key}}</td>
+            			<td class="source" contenteditable="true">{{fr}}</td>
+						<td class="traduction" contenteditable="true">{{uk}}</td>
+            		</tr>
+       			{{/each}}
+				</tbody>
+			</table>
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="handlebars.js"></script>
+		<script src="http://www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+		<script src="app.js"></script>
+
+	</body>
+	
+</html>
